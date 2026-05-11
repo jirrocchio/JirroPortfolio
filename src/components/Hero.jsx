@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { ArrowDown } from 'lucide-react'
+// 👉 Place your photo in src/assets/ and update the filename if needed
+import profilePhoto from '../assets/profileJirro.png'
 
 export default function Hero() {
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 80% 60% at 70% 40%, rgba(200,169,110,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 60% 70% at 30% 50%, rgba(200,169,110,0.07) 0%, transparent 70%)',
         }}
       />
 
@@ -27,71 +28,96 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-5xl w-full mx-auto">
-        {/* Badge */}
+      {/* Split layout — photo column slightly wider */}
+      <div className="max-w-7xl w-full mx-auto grid md:grid-cols-[1fr_1.1fr] gap-6 items-center">
+
+        {/* LEFT — Text content */}
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-widest mb-8 px-4 py-2 rounded-full"
+            style={{ color: 'var(--accent)', border: '1px solid var(--border)', letterSpacing: '0.2em' }}
+          >
+            <span className="w-2 h-2 rounded-full" style={{ background: 'var(--accent)', animation: 'pulse 2s infinite' }} />
+            Available for Opportunities
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="font-display font-black leading-none mb-4"
+            style={{ fontSize: 'clamp(3rem,7vw,5.5rem)', letterSpacing: '-0.02em', color: 'var(--text)' }}
+          >
+            Harold Jirro
+            <br />
+            <span style={{ color: 'var(--accent)' }}>I. Madrona</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-sm uppercase tracking-widest mb-6 font-light"
+            style={{ color: 'var(--text2)', letterSpacing: '0.1em' }}
+          >
+            Video Editing &nbsp;·&nbsp; UI/UX Design &nbsp;·&nbsp; IT &amp; Development
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-base leading-loose mb-10"
+            style={{ color: 'var(--text2)' }}
+          >
+            A creative technologist from Nueva Ecija, Philippines — bridging elegant design and robust development to craft digital experiences that matter.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.65 }}
+            className="flex flex-wrap gap-4"
+          >
+            <a href="#projects" className="btn-primary">View My Work</a>
+            <a href="#contact" className="btn-secondary">Get In Touch</a>
+          </motion.div>
+        </div>
+
+        {/* RIGHT — Bigger photo anchored to bottom, soft fade */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 text-xs uppercase tracking-widest mb-8 px-4 py-2 rounded-full"
-          style={{
-            color: 'var(--accent)',
-            border: '1px solid var(--border)',
-            letterSpacing: '0.2em',
-          }}
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.4, ease: 'easeOut' }}
+          className="relative hidden md:flex items-end justify-center self-end"
+          style={{ minHeight: '78vh' }}
         >
-          <span
-            className="w-2 h-2 rounded-full"
-            style={{ background: 'var(--accent)', animation: 'pulse 2s infinite' }}
+          {/* Gold glow */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse 85% 70% at 50% 55%, rgba(200,169,110,0.13) 0%, transparent 65%)',
+            }}
           />
-          Available for Opportunities
+
+          <img
+            src={profilePhoto}
+            alt="Harold Jirro I. Madrona"
+            style={{
+              width: '100%',
+              maxHeight: '82vh',
+              objectFit: 'cover',
+              objectPosition: 'top center',
+              maskImage: `radial-gradient(ellipse 90% 95% at 50% 30%, black 20%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.25) 75%, transparent 100%)`,
+              WebkitMaskImage: `radial-gradient(ellipse 90% 95% at 50% 30%, black 20%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.25) 75%, transparent 100%)`,
+              filter: 'brightness(0.93) contrast(1.05)',
+            }}
+          />
         </motion.div>
 
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="font-display font-black leading-none mb-4"
-          style={{ fontSize: 'clamp(3rem,9vw,6.5rem)', letterSpacing: '-0.02em', color: 'var(--text)' }}
-        >
-          Harold Jirro
-          <br />
-          <span style={{ color: 'var(--accent)' }}>I. Madrona</span>
-        </motion.h1>
-
-        {/* Title */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-sm uppercase tracking-widest mb-6 font-light"
-          style={{ color: 'var(--text2)', letterSpacing: '0.1em' }}
-        >
-          Video Editing &nbsp;·&nbsp; UI/UX Design &nbsp;·&nbsp; IT &amp; Development
-        </motion.p>
-
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-base leading-loose mb-10 max-w-lg"
-          style={{ color: 'var(--text2)' }}
-        >
-          A creative technologist from Nueva Ecija, Philippines — bridging elegant design and robust development to craft digital experiences that matter.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.65 }}
-          className="flex flex-wrap gap-4"
-        >
-          <a href="#projects" className="btn-primary">View My Work</a>
-          <a href="#contact" className="btn-secondary">Get In Touch</a>
-        </motion.div>
       </div>
 
       {/* Scroll indicator */}
@@ -102,14 +128,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         style={{ color: 'var(--text3)' }}
       >
-        <div
-          style={{
-            width: 1,
-            height: 48,
-            background: 'linear-gradient(to bottom, var(--accent), transparent)',
-            animation: 'scrollLine 2s infinite',
-          }}
-        />
+        <div style={{ width: 1, height: 48, background: 'linear-gradient(to bottom, var(--accent), transparent)', animation: 'scrollLine 2s infinite' }} />
         <span className="text-xs uppercase tracking-widest">Scroll</span>
       </motion.div>
 
