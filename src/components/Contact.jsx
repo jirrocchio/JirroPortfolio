@@ -161,7 +161,7 @@ export default function Contact() {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="John Smith"
+                    placeholder="Type Name here"
                     required
                     disabled={status === 'sending'}
                     className="rounded-xl px-4 py-3 text-sm outline-none transition-colors duration-200 disabled:opacity-50"
@@ -181,7 +181,7 @@ export default function Contact() {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder="yourgmail@example.com"
                     required
                     disabled={status === 'sending'}
                     className="rounded-xl px-4 py-3 text-sm outline-none transition-colors duration-200 disabled:opacity-50"
