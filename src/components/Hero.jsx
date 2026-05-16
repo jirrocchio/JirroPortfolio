@@ -110,7 +110,7 @@ export default function Hero() {
       </div>
 
       {/* ── DESKTOP layout ── */}
-      <div className="hidden md:grid relative z-10 max-w-7xl w-full mx-auto px-10 grid-cols-[1fr_1.1fr] gap-6 items-center">
+      <div className="hidden md:grid relative z-10 max-w-7xl w-full mx-auto px-10 grid-cols-[1fr_0.75fr] gap-6 items-center">
         {/* Left */}
         <div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
@@ -152,7 +152,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3, ease: 'easeOut' }}
-          className="relative flex items-end justify-center self-end" style={{ minHeight: '78vh' }}
+          className="relative flex items-end justify-center self-end" style={{ minHeight: '55vh' }}
         >
           <div className="absolute inset-0 pointer-events-none" style={{
             background: 'radial-gradient(ellipse 80% 70% at 50% 55%, rgba(26,158,110,0.12) 0%, transparent 65%)',
@@ -161,7 +161,7 @@ export default function Hero() {
             src={profilePhoto}
             alt="Harold Jirro I. Madrona"
             style={{
-              width: '100%', maxHeight: '82vh',
+              width: '100%', maxHeight: '58vh',
               objectFit: 'cover', objectPosition: 'top center',
               maskImage: 'radial-gradient(ellipse 90% 95% at 50% 30%, black 20%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.2) 75%, transparent 100%)',
               WebkitMaskImage: 'radial-gradient(ellipse 90% 95% at 50% 30%, black 20%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.2) 75%, transparent 100%)',
